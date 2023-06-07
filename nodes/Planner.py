@@ -35,5 +35,5 @@ class Planner(LLMNode):
         prompt = "Tools can be one of the following:\n"
         for name in self.workers:
             worker = self._get_worker(name)
-            prompt += f"{worker.name}[input]: {worker.description}\n"
+            prompt += str(worker.name) + "[input]:" + str(worker.description) + "\n"
         return prompt + "\n"

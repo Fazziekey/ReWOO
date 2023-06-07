@@ -43,8 +43,10 @@ class PWS:
         self._get_worker_evidences()
         worker_log = ""
         for i in range(len(self.plans)):
-            e = f"#E{i + 1}"
-            worker_log += f"{self.plans[i]}\nEvidence:\n{self.worker_evidences[e]}\n"
+            # e = f"#E{i + 1}"
+            e = "#E" + str(i + 1)
+            # worker_log += f"{self.plans[i]}\nEvidence:\n{self.worker_evidences[e]}\n"
+            worker_log += str(self.plans[i]) + "\nEvidence:\n" + str(self.worker_evidences[e]) + "\n"
 
         # Solve
         solver_response = self.solver.run(input, worker_log, log=True)
